@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>David Dong</title>
+    <script th:src="@{/script.js}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+<body>
+    <nav th:fragment="navigation">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/">Home Page</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Events</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h1 th:text="${title}"></h1>
+
+<form method="post" action="/events/processDelete">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Selected Events</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="event : ${events}">
+<!-- name="deleteIds" and th:value="${event.id}" have to match -->
+<!--the controller @RequestParam(required = false) List<Integer> deleteIds-->
+        <td><input type="checkbox" name="deleteIds" th:value="${event.id}"/></td>
+        <td th:text="${event.id}"></td>
+        <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
+    </tr>
+    </tbody>
+</table>
+    <input type="submit" value="Delete Selected Events" class="btn btn-danger"/>
+</form>
+</body>
+
+</html>
