@@ -10,13 +10,21 @@
 <form method="post" action="/events/processCreateModelBinding">
     <div class="form-group">
         <label>Name:
-            <input class="form-control" type="text" name="name"/>
+            <input class="form-control" th:field="${event.name}"/>
         </label>
+        <p class="error" th:errors="${event.name}"></p>
     </div>
     <div class="form-group">
         <label>Description:
-            <input class="form-control" type="text" name="description"/>
+            <input class="form-control" th:field="${event.description}"/>
         </label>
+        <p class="error" th:errors="${event.description}"></p>
+    </div>
+    <div class="form-group">
+        <label>Contact Email:
+            <input class="form-control" th:field="${event.contactEmail}"/>
+        </label>
+        <p class="error" th:errors="${event.contactEmail}"></p>
     </div>
     <div class="form-group">
         <input class="btn btn-success" type="submit" value="Submit Event"/>

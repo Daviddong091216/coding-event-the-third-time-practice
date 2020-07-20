@@ -18,6 +18,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Contact Email</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
 <!-- Because we have @override the toString method in event.class    -->
 <!-- here we can  use th:text="${event}"    -->
             <td th:text="${event.description}"></td>
+            <td th:text="${event.contactEmail}"></td>
         </tr>
     </tbody>
 </table>
